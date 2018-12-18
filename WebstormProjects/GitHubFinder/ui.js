@@ -29,15 +29,13 @@ class UI {
           <h3 class="page-heading mb-3">Latest Repos</h3>
           <div id="repos"></div> 
         `;
-
-
     }
 
     showRepos(repos) {
         let res = '';
 
         repos.forEach(repo => {
-            res += `
+            let html = `
                 <div class="card card-body mb-2">
                   <div class="row">
                     <div class="col-md-6">
@@ -50,13 +48,13 @@ class UI {
                     </div>
                   </div>
                 </div>
-      `;
+            `;
+            res += html;
         })
         document.getElementById('repos').innerHTML = res;
     }
 
     showAlert(message, className) {
-
         this.clearAlert();
 
         const div = document.createElement('div');
