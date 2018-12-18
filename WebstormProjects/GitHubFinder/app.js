@@ -10,13 +10,17 @@ userName.addEventListener('keyup', e => {
             .then(data => {
                 if (data.profile.message === 'Not Found') {
                     // show alert
+                    ui.showAlert(data.profile.message, 'alert alert-danger');
+
                 }else {
                     //show profile
+                    console.log(data)
                     ui.showProfile(data.profile);
+                    ui.showRepos(data.repos);
                 }
             })
     }else {
-        //clear UIprofile
-
+        //clear UI profile
+        ui.clearProfile();
     }
 })
